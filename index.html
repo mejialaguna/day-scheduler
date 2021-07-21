@@ -24,79 +24,81 @@
   </head>
 
   <body>
-    <header class="jumbotron text-white bg-dark"">
+    <header class="jumbotron text-white bg-dark">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
     </header>
-    <div class="container">
-
-      <!-- Timeblocks go here -->
-    </div>
-    
+     
 
     <div class="container ">
+      <form id= "user-form">
+        <div class="row time-block">
+          <span class="col-1 time "  >8 AM</span>
+          <textarea placeholder="place your task here" id="task" class= "col-10  color"></textarea>
+          <button class="col-1 saveBtn" type="submit" title="save"><i class="bi bi-save" id="btn"></i></button>
+        </div>
+      </form>
       <div class="row time-block">
-        <span class="col-1 time "  >9AM</span>
-        <textarea placeholder="place your task here" id="task" class= "col-10"></textarea>
+        <span class="col-1 time"  >9 AM</span>
+        <textarea placeholder="place your task here" id="task" class= "col-10 color"></textarea>
+        <button class="col-1 saveBtn" type="submit" title="save"><i class="bi bi-save" id="btn"></i></button>
+      </div>
+      <div class="row time-block">
+        <span class="col-1 time"  >10 AM</span>
+        <textarea placeholder="place your task here" id="task" class= "col-10 color"></textarea>
         <button class="col-1 saveBtn" type="submit" title="save"><i class="bi bi-save"></i></button>
       </div>
       <div class="row time-block">
-        <span class="col-1 time"  >9AM</span>
-        <textarea placeholder="place your task here" id="task" class= "col-10"></textarea>
+        <span class="col-1 time"  >11 AM</span>
+        <textarea placeholder="place your task here" id="task" class= "col-10 color"></textarea>
         <button class="col-1 saveBtn" type="submit" title="save"><i class="bi bi-save"></i></button>
       </div>
       <div class="row time-block">
-        <span class="col-1 time"  >10AM</span>
-        <textarea placeholder="place your task here" id="task" class= "col-10"></textarea>
+        <span class="col-1 time"  >12 PM</span>
+        <textarea placeholder="place your task here" id="task" class= "col-10 color"></textarea>
         <button class="col-1 saveBtn" type="submit" title="save"><i class="bi bi-save"></i></button>
       </div>
       <div class="row time-block">
-        <span class="col-1 time"  >11AM</span>
-        <textarea placeholder="place your task here" id="task" class= "col-10"></textarea>
+        <span class="col-1 time"  >1 PM</span>
+        <textarea placeholder="place your task here" id="task" class= "col-10 color"></textarea>
         <button class="col-1 saveBtn" type="submit" title="save"><i class="bi bi-save"></i></button>
       </div>
       <div class="row time-block">
-        <span class="col-1 time"  >12PM</span>
-        <textarea placeholder="place your task here" id="task" class= "col-10 present"></textarea>
+        <span class="col-1 time"  >2 PM</span>
+        <textarea placeholder="place your task here" id="task" class= "col-10 color"></textarea>
         <button class="col-1 saveBtn" type="submit" title="save"><i class="bi bi-save"></i></button>
       </div>
       <div class="row time-block">
-        <span class="col-1 time"  >1PM</span>
-        <textarea placeholder="place your task here" id="task" class= "col-10 present"></textarea>
+        <span class="col-1 time"  >3 PM</span>
+        <textarea placeholder="place your task here" id="task" class= "col-10 color"></textarea>
         <button class="col-1 saveBtn" type="submit" title="save"><i class="bi bi-save"></i></button>
       </div>
       <div class="row time-block">
-        <span class="col-1 time"  >2PM</span>
-        <textarea placeholder="place your task here" id="task" class= "col-10 present"></textarea>
+        <span class="col-1 time"  >4 PM</span>
+        <textarea placeholder="place your task here" id="task" class= "col-10 color"></textarea>
         <button class="col-1 saveBtn" type="submit" title="save"><i class="bi bi-save"></i></button>
       </div>
       <div class="row time-block">
-        <span class="col-1 time"  >3PM</span>
-        <textarea placeholder="place your task here" id="task" class= "col-10 present"></textarea>
+        <span class="col-1 time"  >5 PM</span>
+        <textarea placeholder="place your task here" id="task" class= "col-10 color"></textarea>
         <button class="col-1 saveBtn" type="submit" title="save"><i class="bi bi-save"></i></button>
       </div>
       <div class="row time-block">
-        <span class="col-1 time"  >4PM</span>
-        <textarea placeholder="place your task here" id="task" class= "col-10 future"></textarea>
+        <span class="col-1 time"  >6 PM</span>
+        <textarea placeholder="place your task here" id="task" class= "col-10 color"></textarea>
         <button class="col-1 saveBtn" type="submit" title="save"><i class="bi bi-save"></i></button>
       </div>
       <div class="row time-block">
-        <span class="col-1 time"  >5PM</span>
-        <textarea placeholder="place your task here" id="task" class= "col-10 future"></textarea>
+        <span class="col-1 time"  >7 PM</span>
+        <textarea placeholder="place your task here" id="task" class= "col-10 color"></textarea>
         <button class="col-1 saveBtn" type="submit" title="save"><i class="bi bi-save"></i></button>
       </div>
       <div class="row time-block">
-        <span class="col-1 time"  >6PM</span>
-        <textarea placeholder="place your task here" id="task" class= "col-10 future"></textarea>
+        <span class="col-1 time"  >11 pm</span>
+        <textarea placeholder="place your task here" id="task" class= "col-10 color"></textarea>
         <button class="col-1 saveBtn" type="submit" title="save"><i class="bi bi-save"></i></button>
       </div>
-      <div class="row time-block">
-        <span class="col-1 time"  >7PM</span>
-        <textarea placeholder="place your task here" id="task" class= "col-10 future"></textarea>
-        <button class="col-1 saveBtn" type="submit" title="save"><i class="bi bi-save"></i></button>
-      </div>
-      
     </div>
 
     
