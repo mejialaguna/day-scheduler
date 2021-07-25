@@ -37,7 +37,7 @@ $(".saveBtn").click(function (event) {
   
   
   localStorage.setItem("newTask", JSON.stringify(allTask));
-  // localStorage.getItem('allTask', JSON.stringify(newTask));
+  localStorage.getItem('newTask', JSON.stringify(allTask));
 });
 
 var loadtasks = function () {
