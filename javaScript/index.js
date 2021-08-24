@@ -12,9 +12,9 @@ $(".saveBtn").click(function(event) {
 
 function colorChange() {
   $(".color").each(function () {
-    let taskTime = $(".time").text();
-    let currentTime = moment().format("hA");
-
+    let taskTime = $(this).parent().attr("id").replace("hr-" , "")
+    let currentTime = moment().hour();
+    console.log(taskTime)
     if (taskTime < currentTime) {
       $(this).addClass("past");
     } else if (taskTime === currentTime) {
