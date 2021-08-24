@@ -1,68 +1,36 @@
-// var container = $(".container");
-// const btnSave = $(".btn-save");
 $("#currentDay").text(moment().format("MMMM Do YYYY, h:mm:ss a"));
-var allTask = [];
 
-$(".saveBtn").click(function (event) {
-  // preventDefault refresh after clicking the save btn
+$(".saveBtn").click(function(event) {
+  //(e) stand for event
   event.preventDefault();
-
-  var thisBtn = $(this);
-  var hour = thisBtn.siblings("span").text();
-  var task = thisBtn.siblings("textarea").val(); // value insted of text
-  var newTask = {
-    hour: hour,
-    textTask: task,
-  };
-
-  
-  // if (!newTask) {
-      //     alert("You need to fill out the task form!");
-      //     return false;
-      //   }
-      
-      var included = allTask.filter(function (item) {
-          return item.hour === newTask.hour;
-        })
-        
-        
-        console.log(included)
-        if (!included.length){
-            allTask.push(newTask);
-            
-        }else{
-      const oldTasks = allTask.filter(item => item.hour !== newTask.hour)
-      allTask = [newTask, ...oldTasks]
-    } 
-  
-  
-  localStorage.setItem("newTask", JSON.stringify(allTask));
-  localStorage.getItem('newTask', JSON.stringify(allTask));
+  // this meaning a sibling of the botton class name sabeBtn
+  let task = $(this).siblings("textarea").val(); //value of the what is about to be typed in
+  let time = $(this).parent().attr("id"); // getting parent Element id
+  console.log($(this))
+  localStorage.setItem(time, JSON.stringify(task));
 });
 
-var loadtasks = function () {
-  newTask = JSON.parse(localStorage.getItem("newtask"));
-};
-
-// function to check the due time during the day
-function Color() {
+function colorChange() {
   $(".color").each(function () {
-    let taskTime = $(".time").val();
+    let taskTime = $(".time").text();
     let currentTime = moment().format("hA");
-    if (taskTime > currentTime) {
-      $(this).addClass("future");
-    } else if (taskTime == currentTime) {
+
+    if (taskTime < currentTime) {
+      $(this).addClass("past");
+    } else if (taskTime === currentTime) {
+      $(this).removeClass("past");
       $(this).addClass("present");
     } else {
-      $(this).addClass("past");
+      $(this).removeClass("present");
+      $(this).removeClass("past");
+      $(this).addClass("future");
     }
   });
 }
 
-// interval to check the time
-setInterval(function () {
-  Color();
-}, 1000);
+colorChange();
 
-// running the function color
-Color();
+for (let i = 8; i < 17; i++) {  
+  var task = localStorage.getItem(`hr-${i}`)
+  $(`#hr-${i} textarea`).val(task)  
+}
